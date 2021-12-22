@@ -1,0 +1,102 @@
+<nz-carousel #ban nzAutoPlay [nzEffect]="'fade'" style="height: 488px">
+  <div nz-carousel-content><img src="assets/portal/slider-1.jpg" alt=""></div>
+  <div nz-carousel-content><img src="assets/portal/slider-2.jpg" alt=""></div>
+  <div nz-carousel-content><img src="assets/portal/slider-3.jpg" alt=""></div>
+  <i nz-icon nzType="left" class="ban-left" (click)="ban.pre()"></i>
+  <i nz-icon nzType="right" class="ban-right" (click)="ban.next()"></i>
+</nz-carousel>
+
+<div class="w1200">
+  <h2 class="flex title-box">
+    <span><i></i>资源中心 <em>Resource center</em></span>
+    <a [routerLink]="['/index/resources/1']">更多<i nz-icon nzType="double-right"></i></a>
+  </h2>
+  <ul class="flex resources">
+    <li [routerLink]="['/index/resources/1']">
+      <p>名师专题课件</p>
+      <img src="assets/portal/icon_data.png" alt="">
+    </li>
+    <li [routerLink]="['/index/resources/2']">
+      <p>知识点库</p>
+      <img src="assets/portal/icon_file.png" alt="" style="margin-top: 8px;">
+    </li>
+    <li [routerLink]="['/index/resources/3']">
+      <p>微课及2D动画</p>
+      <img src="assets/portal/icon_video.png" alt="" style="margin-top: 14px;">
+    </li>
+    <li [routerLink]="['/index/resources/4']">
+      <p>交互动画</p>
+      <img src="assets/portal/icon_five_star.png" alt="" style="margin: 0 14px 0 42px;">
+    </li>
+  </ul>
+</div>
+
+<div class="w1200">
+  <h2 class="flex title-box">
+    <span><i></i>产品服务 <em>The Product Service</em></span>
+    <a [routerLink]="['/index/platforms']">更多<i nz-icon nzType="double-right"></i></a>
+  </h2>
+  <ul class="flex platforms">
+    <li>
+      <img src="assets/portal/vr_hqq.png" alt="">
+      <div class="platforms-title">"红旗渠精神"虚拟场馆</div>
+    </li>
+    <li>
+      <img src="assets/portal/vr_gwc.png" alt="">
+      <div class="platforms-title">"谷文昌精神"虚拟场馆</div>
+    </li>
+    <li>
+      <img src="assets/portal/vr_sby.png" alt="">
+      <div class="platforms-title">"石板岩扁担精神"虚拟场馆</div>
+    </li>
+  </ul>
+</div>
+
+<div class="panoramic_bg">
+  <div class="w1200">
+    <h2 class="flex title-box">
+      <span style="color: #fff"><i style="background: #fff"></i>解决方案 <em>solution</em></span>
+      <a [routerLink]="['/index/systems']" style="color: #fff">更多<i nz-icon nzType="double-right"></i></a>
+    </h2>
+    <nz-carousel nzAutoPlay [nzEffect]="'fade'" [nzDots]="false" style="height: 397px">
+      <div nz-carousel-content>
+        <img class="point" src="assets/portal/slider-1.jpg" alt="">
+        <div class="panoramic-title hide">"红旗渠精神"全景系统</div>
+      </div>
+      <div nz-carousel-content>
+        <img class="point" src="assets/portal/slider-2.jpg" alt="">
+        <div class="panoramic-title hide">"石板岩扁担精神"全景系统</div>
+      </div>
+      <div nz-carousel-content>
+        <img class="point" src="assets/portal/slider-3.jpg" alt="">
+        <div class="panoramic-title hide">"谷文昌精神"全景系统</div>
+      </div>
+    </nz-carousel>
+  </div>
+</div>
+
+<div class="course-bg">
+  <div class="w1200">
+    <h2 class="flex title-box">
+      <span><i></i>艺术思政仿真课程 <em>Education course</em></span>
+      <a [routerLink]="['/index/courses']"> </a>
+    </h2>
+    <div class="flex course-type">
+      <div>
+        <ng-container *ngFor="let item of courses;let i=index">
+          <span class="vertical" *ngIf="i > 0">|</span>
+          <span (click)="id=item['id']" [ngClass]="{'selected':id==item['id']}">{{item['name']}}</span>
+        </ng-container>
+      </div>
+      <a [routerLink]="['/index/courses']">更多<i nz-icon nzType="double-right"></i></a>
+    </div>
+    <ul class="flex courses">
+      <li *ngFor="let item of nodes">
+        <img [src]="item['path']" alt="">
+        <div class="course-title">
+          <div class="limit-lines" [title]="item['title']">{{item['title']}}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
