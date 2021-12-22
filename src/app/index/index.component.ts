@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  id = 0;
+  id = 1;
   nodes = [];
   courses = [];
   constructor() { }
