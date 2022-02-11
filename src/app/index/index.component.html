@@ -8,46 +8,26 @@
 
 <div class="w1200">
   <h2 class="flex title-box">
-    <span><i></i>资源中心 <em>Resource center</em></span>
-    <a [routerLink]="['/index/resources/1']">更多<i nz-icon nzType="double-right"></i></a>
+    <span><i></i>产品服务 <em>Product Service</em></span>
+    <a [routerLink]="['/index/platforms']">更多<i nz-icon nzType="double-right"></i></a>
   </h2>
-  <ul class="flex resources">
-    <li [routerLink]="['/index/resources/1']">
-      <p>名师专题课件</p>
-      <img src="assets/portal/icon_data.png" alt="">
-    </li>
-    <li [routerLink]="['/index/resources/2']">
-      <p>知识点库</p>
-      <img src="assets/portal/icon_file.png" alt="" style="margin-top: 8px;">
-    </li>
-    <li [routerLink]="['/index/resources/3']">
-      <p>微课及2D动画</p>
-      <img src="assets/portal/icon_video.png" alt="" style="margin-top: 14px;">
-    </li>
-    <li [routerLink]="['/index/resources/4']">
-      <p>交互动画</p>
-      <img src="assets/portal/icon_five_star.png" alt="" style="margin: 0 14px 0 42px;">
+  <ul class="flex platforms">
+    <li *ngFor="let item of courses">
+      <img src="assets/portal/{{item['path']}}.jpg" [alt]="item['title']" [title]="item['title']">
+      <div class="platforms-title">{{item['title']}}</div>
     </li>
   </ul>
 </div>
 
 <div class="w1200">
   <h2 class="flex title-box">
-    <span><i></i>产品服务 <em>The Product Service</em></span>
+    <span><i></i>客户案例 <em>Customer case</em></span>
     <a [routerLink]="['/index/platforms']">更多<i nz-icon nzType="double-right"></i></a>
   </h2>
   <ul class="flex platforms">
-    <li>
-      <img src="assets/portal/vr_hqq.png" alt="">
-      <div class="platforms-title">"红旗渠精神"虚拟场馆</div>
-    </li>
-    <li>
-      <img src="assets/portal/vr_gwc.png" alt="">
-      <div class="platforms-title">"谷文昌精神"虚拟场馆</div>
-    </li>
-    <li>
-      <img src="assets/portal/vr_sby.png" alt="">
-      <div class="platforms-title">"石板岩扁担精神"虚拟场馆</div>
+    <li *ngFor="let item of nodes">
+      <img src="assets/portal/{{item['path']}}.jpg" [alt]="item['title']" [title]="item['title']">
+      <div class="platforms-title">{{item['title']}}</div>
     </li>
   </ul>
 </div>
@@ -56,9 +36,9 @@
   <div class="w1200">
     <h2 class="flex title-box">
       <span style="color: #fff"><i style="background: #fff"></i>解决方案 <em>solution</em></span>
-      <a [routerLink]="['/index/systems']" style="color: #fff">更多<i nz-icon nzType="double-right"></i></a>
+      <a [routerLink]="['/solution']" style="color: #fff">更多<i nz-icon nzType="double-right"></i></a>
     </h2>
-    <nz-carousel nzAutoPlay [nzEffect]="'fade'" [nzDots]="false" style="height: 397px">
+    <nz-carousel nzAutoPlay [nzEffect]="'fade'" [nzDots]="false" style="height: 327px">
       <div nz-carousel-content>
         <img class="point" src="assets/portal/slider-1.jpg" alt="">
         <div class="panoramic-title hide">"红旗渠精神"全景系统</div>
@@ -78,25 +58,36 @@
 <div class="course-bg">
   <div class="w1200">
     <h2 class="flex title-box">
-      <span><i></i>艺术思政仿真课程 <em>Education course</em></span>
-      <a [routerLink]="['/index/courses']"> </a>
+      <span><i></i>业务分类 <em>Categories</em></span>
+      <span></span>
     </h2>
-    <div class="flex course-type">
-      <div>
-        <ng-container *ngFor="let item of courses;let i=index">
-          <span class="vertical" *ngIf="i > 0">|</span>
-          <span (click)="id=item['id']" [ngClass]="{'selected':id==item['id']}">{{item['name']}}</span>
-        </ng-container>
-      </div>
-      <a [routerLink]="['/index/courses']">更多<i nz-icon nzType="double-right"></i></a>
-    </div>
     <ul class="flex courses">
-      <li *ngFor="let item of nodes">
-        <img [src]="item['path']" alt="">
+      <li>
+        <img src="assets/portal/type1.jpg" alt="环氧地坪工程" title="环氧地坪工程">
         <div class="course-title">
-          <div class="limit-lines" [title]="item['title']">{{item['title']}}</div>
+          <span>环氧地坪工程</span>
+          <div title="环氧地坪也可称为环氧地面，是用环氧树脂为主材、固化剂、稀释剂、溶剂、分散剂、消泡剂及某些填料等混合加工而成的环氧地坪漆。">
+            环氧地坪也可称为环氧地面，是用环氧树脂为主材、固化剂、稀释剂、溶剂、分散剂、消泡剂及某些填料等混合加工而成的环氧地坪漆。
+          </div>
         </div>
       </li>
+      <li>
+        <img src="assets/portal/type2.jpg" alt="耐磨地坪工程" title="耐磨地坪工程"/>
+        <div class="course-title">
+          <span>耐磨地坪工程</span>
+          <div title="环氧耐磨地坪，就是用环氧树脂漆制作的环氧砂浆地坪，具有易清洁，高耐磨，防霉防滑等特点。主要有金属型，非金属耐磨两种类型。">
+            环氧耐磨地坪，就是用环氧树脂漆制作的环氧砂浆地坪，具有易清洁，高耐磨，防霉防滑等特点。主要有金属型，非金属耐磨两种类型。
+          </div>
+        </div>
+      </li>
+      <li>
+        <img src="assets/portal/type3.jpg" alt="运动场地坪工程" title="运动场地坪工程"/>
+        <div class="course-title">
+          <span>运动场地坪工程</span>
+          <div title="运动场地坪漆主要分为聚氨酯球场地坪漆和丙烯酸球场地坪漆，主要运用于网球场、篮球场、羽毛球场、排球场、等体育运动场地面。">
+            运动场地坪漆主要分为聚氨酯球场地坪漆和丙烯酸球场地坪漆，主要运用于网球场、篮球场、羽毛球场、排球场、等体育运动场地面。
+          </div>
+        </div>
     </ul>
   </div>
 </div>

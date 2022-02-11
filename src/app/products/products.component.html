@@ -1,1 +1,27 @@
-<p>products works!</p>
+<div class="bg6e">
+<img class="top-banner" src="assets/portal/product-banner.jpg" alt="">
+<div class="w1200 items-box">
+    <div class="breadcrumb">
+      <i nz-icon nzType="home"></i>
+      <a [routerLink]="['/index']">首页 > </a> 艺术思政仿真课程
+    </div>
+    <div class="courses">
+      <div class="course-type">
+        <ul>
+          <li (click)="id=item.id;loadItems()" [ngClass]="{'selected':id==item.id}"
+              *ngFor="let item of types">{{item.name}}</li>
+        </ul>
+      </div>
+      <div class="items">
+        <ul class="flex">
+          <li *ngFor="let item of list" (click)="show(item)">
+            <img src="assets/portal/{{item['path']}}.jpg" alt="">
+            <div class="course-title">
+              <div class="limit-lines" [title]="item['title']">{{item['title']}}</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
