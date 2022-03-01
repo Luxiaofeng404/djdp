@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 interface item {
   type: number;
   path: string;
@@ -47,10 +48,13 @@ export class ProductsComponent implements OnInit {
     { type: 6, path: 'ys3', title: '环氧彩砂地坪'},
     { type: 6, path: 'ys4', title: '陶瓷颗粒防滑路面'},
   ];
-  constructor() { }
+  constructor(private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
-    this.loadItems();
+    this.route.paramMap.subscribe((params: Params) => {
+      this.id = +params.get('type') || 0;
+      this.loadItems();
+    });
   }
   loadItems() {
     this.list = this.items.filter(item => this.id ? item.type === this.id : true);

@@ -7,9 +7,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  type = 1;
-  keyword = '';
-
   constructor() {
   }
 

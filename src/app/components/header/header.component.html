@@ -14,20 +14,24 @@
   <div class="menu-bar">
     <ul class="w1200 menus">
       <li [routerLink]="['/index']">首页</li>
-      <li [routerLink]="['/products']">
-        产品服务 <i nz-icon type="caret-down" nzTheme="outline"></i>
+      <li>
+        <span [routerLink]="['/products/0']">
+          产品服务 <i nz-icon type="caret-down" nzTheme="outline"></i>
+        </span>
         <ul class="menus-two">
-          <li>环氧地坪系列</li>
-          <li>耐磨地坪系列</li>
-          <li>PVC塑胶地坪系列</li>
+          <li [routerLink]="['/products/1']">环氧地坪系列</li>
+          <li [routerLink]="['/products/2']">耐磨地坪系列</li>
+          <li [routerLink]="['/products/3']">PVC塑胶地坪系列</li>
         </ul>
       </li>
-      <li [routerLink]="['/case']">
-        解决方案 <i nz-icon type="caret-down" nzTheme="outline"></i>
+      <li>
+        <span [routerLink]="['/case/4']">
+          解决方案 <i nz-icon type="caret-down" nzTheme="outline"></i>
+        </span>
         <ul class="menus-two">
-          <li>运动场地坪系列</li>
-          <li>停车场地坪系列</li>
-          <li>艺术地坪系列</li>
+          <li [routerLink]="['/case/4']">运动场地坪系列</li>
+          <li [routerLink]="['/case/5']">停车场地坪系列</li>
+          <li [routerLink]="['/case/6']">艺术地坪系列</li>
         </ul>
       </li>
       <li [routerLink]="['/process']">服务流程</li>

@@ -11,12 +11,12 @@ import {ProcessComponent} from "./process/process.component";
 const routes: Routes = [
   {path: '', redirectTo: 'index', pathMatch: 'full'},
   {path: 'index', component: IndexComponent},
-  {path: 'case', component: CaseComponent},
+  {path: 'case/:type', component: CaseComponent},
   {path: 'news', component: NewsComponent},
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContentUsComponent},
   {path: 'process', component: ProcessComponent},
-  {path: 'products', component: ProductsComponent},
+  {path: 'products/:type', component: ProductsComponent},
 ];
 
 @NgModule({
