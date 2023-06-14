@@ -41,20 +41,30 @@ const timer = setInterval(() => {
     const slabAll = $('.resource_slab .all');
     minerals_num.text() == minerals_max.text().slice(1) && slabAll.click();
 
-    //金属板、钢
+    //资源数据-铁
     const iron_num = $('.resource_iron .resAmount');
     const iron_max = $('.resource_iron .maxRes');
+    //资源数据-煤
     const coal_num = $('.resource_coal .resAmount');
     const coal_max = $('.resource_coal .maxRes');
+    //全部btn-金属板
     const plateAll = $('.resource_plate .all');
+    //全部btn-钢
     const steelAll = $('.resource_steel .all');
+    //生成-钢
     coal_num.text() == coal_max.text().slice(1) && steelAll.click();
+    //生成-钢、金属板
     iron_num.text() == iron_max.text().slice(1) && (steelAll.click(), plateAll.click());
 
-    //手稿
+    //资源数据-文化
     const culture_num = $('.resource_culture .resAmount');
     const culture_max = $('.resource_culture .maxRes');
+    //全部btn-羊皮纸
     const parchmentAll = $('.resource_parchment .all');
+    //全部btn-手稿
     const manuscriptAll = $('.resource_manuscript .all');
+    //生成-羊皮纸
+    parchmentAll.click();
+    //生成-羊皮纸、手稿
     culture_num.text() == culture_max.text().slice(1) && (parchmentAll.click(), manuscriptAll.click());
 }, 2000);
