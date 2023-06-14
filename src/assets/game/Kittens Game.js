@@ -44,8 +44,11 @@ const timer = setInterval(() => {
     //金属板、钢
     const iron_num = $('.resource_iron .resAmount');
     const iron_max = $('.resource_iron .maxRes');
+    const coal_num = $('.resource_coal .resAmount');
+    const coal_max = $('.resource_coal .maxRes');
     const plateAll = $('.resource_plate .all');
     const steelAll = $('.resource_steel .all');
+    coal_num.text() == coal_max.text().slice(1) && steelAll.click();
     iron_num.text() == iron_max.text().slice(1) && (steelAll.click(), plateAll.click());
 
     //手稿
